@@ -2,5 +2,6 @@
  torchvision
  transformers
  datasets
- transformers
+ transformers[torch]
  tokenizer
+ accelerate
