@@ -1,0 +1,54 @@
+Aqui está um exemplo de um arquivo your_data.csv em português do Brasil:
+
+"text","label"
+
+"Eu amo assistir filmes de ação","positivo"
+
+"O novo filme da Marvel é incrível","positivo"
+
+"Não gostei do final do filme","negativo"
+
+"O ator principal é muito talentoso","positivo"
+
+"O filme é muito ruim, não vale a pena assistir","negativo"
+
+"Eu adorei a trilha sonora do filme","positivo"
+
+"O filme é muito longo e chato","negativo"
+
+"Eu recomendaria esse filme para todos","positivo"
+
+"O filme é muito confuso e difícil de entender","negativo"
+
+"Eu amo a forma como o filme aborda temas sociais","positivo"
+
+Este arquivo contém 10 exemplos de textos com suas respectivas labels (positivo ou negativo). Você pode adicionar mais exemplos para treinar o modelo.
+
+Lembre-se de que o arquivo your_data.csv deve estar no mesmo diretório que o código Python ou você precisa especificar o caminho completo para o arquivo.
+
+Se você quiser gerar mais exemplos, você pode usar uma ferramenta como o faker para gerar textos aleatórios em português do Brasil. Por exemplo:
+
+import pandas as pd
+
+from faker import Faker
+
+
+fake = Faker('pt_BR')
+
+
+data = []
+
+for i in range(100):
+
+    text = fake.text(max_nb_chars=200)
+
+    label = 'positivo' if fake.random_int(0, 1) == 0 else 'negativo'
+
+    data.append({'text': text, 'label': label})
+
+
+df = pd.DataFrame(data)
+
+df.to_csv('your_data.csv', index=False)
+
+Este código gera 100 exemplos de textos aleatórios em português do Brasil com labels positivas ou negativas e salva em um arquivo your_data.csv.
